@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>页面跳转中</title>
+    <!-- content=等待秒数; url=目标地址 -->
+    <meta http-equiv="refresh" content="1; url=https://www.quanyetong.com">
+    <style>
+        body{background:#fff;text-align:center;padding-top:100px;font-family:Microsoft Yahei;}
+        .tip{font-size:18px;color:#333;}
+        a{color:#ff7800;text-decoration:none;}
+    </style>
+</head>
+<body>
+    <div class="tip">
+        <p>页面将在 <span id="count">1</span> 秒后自动进入</p>
+        <p>若未自动进入，请<a href="https://www.quanyetong.com">点击此处</a>立即前往</p>
+    </div>
+
+    <script>
+        // 倒计时数字动态更新
+        let time = 1;
+        const countDom = document.getElementById('count');
+        setInterval(()=>{
+            time--;
+            countDom.innerText = time;
+            if(time <= 0) clearInterval();
+        },1000)
+    </script>
+</body>
+</html>
